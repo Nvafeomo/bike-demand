@@ -5,8 +5,12 @@
 Prompt used:
 
 ```
-Suggest a simple Streamlit app structure that separates the UI,
-the bike-demand prediction, and the local Ollama call.
+I need to build a small Streamlit app for my SWENG 889 assignment.
+It should take weather and calendar inputs, predict hourly bike demand
+with the Gradient Boosting model from the module 3 tutorial, then send
+that prediction to the local Ollama LLM for a short recommendation.
+Keep it simple. Separate the UI, the prediction code, and the Ollama
+call into different files.
 ```
 
 What I used:
@@ -18,8 +22,11 @@ I used the three-file split: `app.py`, `src/predict.py`, and `src/llm_service.py
 Prompt used:
 
 ```
-Help me load the Gradient Boosting pickle and make a prediction from
-form inputs. The model was trained with scaled features.
+Help me write predict.py. I have gradient_boosting_model.pkl and
+scaler.pkl. The model was trained on scaled features, so I have to
+rebuild the same columns from the form. Peak hour is 18-22, night is
+hour under 6, and Autumn is the dropped season. Also check that the
+inputs are in range before predicting.
 ```
 
 What I used:
@@ -32,8 +39,10 @@ so peak hour, night, and season matching were the same as training.
 Prompt used:
 
 ```
-Help me send the prediction to the local Ollama service and get a short
-explanation for a bike-share operator.
+The prediction should go to the local Ollama service from the tutorial
+(localhost:11434). I want a couple sentences of guidance for a bike
+share operator. The LLM should use the number from the model. Do not
+let it come up with its own demand estimate.
 ```
 
 What I used:
@@ -46,7 +55,9 @@ telling the model not to recalculate the demand number.
 Prompt used:
 
 ```
-If Ollama is unavailable, still show the ML prediction.
+If Ollama is down or the request fails, still show the ML prediction.
+Also show a clear error if the user enters something invalid, like
+hour 47. Do not crash the app.
 ```
 
 What I used:
