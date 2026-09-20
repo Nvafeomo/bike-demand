@@ -53,3 +53,17 @@ What I used:
 
 I used the try/except idea and a fallback message in the UI. I also added
 a timeout because the first version hung when the container was stopped.
+
+## Assignment Check
+
+Prompt used:
+
+```
+Here is the assignment. Check that I am not missing anything and that
+the README and PROMPT.md look complete.
+```
+
+What I used:
+
+I used this as a final check. The app was already built. It mainly
+confirmed the README and PROMPT.md covered what the assignment asked for.
